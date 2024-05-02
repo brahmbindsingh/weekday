@@ -1,13 +1,19 @@
 .job-card
-    height: 30px
+    width: 400px
+    padding: 20px
+    border-radius: 20px
+    box-shadow: 0 0px 6px 0px rgba(0, 0, 0, 0.1)
+    margin: 30px
+
 
     .post-date
         display: flex
         align-items: center
         padding: 5px 10px
         border: 1px solid var(--base-grey-color)
-        border-radius: 5px
+        border-radius: 20px
         width: fit-content
+        margin-bottom: 15px
 
         img.hourglass-image
            height: 12px
@@ -15,3 +21,119 @@
 
         p.post-time
             font-size: 12px
+
+    .company-details
+        display: flex
+        margin-bottom: 15px
+
+        img.company-logo
+            width: 100px
+
+        .job-info
+            p.company-name
+                color: var(--text-grey-color)
+                letter-spacing: 1px
+                font-size: 14px
+                margin-bottom: 5px
+
+            p.job-profile
+                margin-bottom: 5px
+
+            p.job-location
+                font-size: 13px
+                font-weight: 600
+
+    p.salary
+        color:  #4c5969
+        margin-bottom: 15px
+
+    h3.about-company
+        font-weight: 500
+    
+    h4
+        // font-weight: 600
+
+    .job-description
+        position: relative
+        height: 250px
+        overflow: hidden
+        margin-bottom: 15px
+
+        a
+
+            .view-job
+                position: absolute
+                bottom: 0
+                text-align: center
+                padding: 75px 0 20px
+                background: linear-gradient(to top, white, rgba(255, 255, 255, .2))
+                width: 100%
+                color: #4d47db
+                cursor: pointer
+
+                // &::after
+                //     position: absolute
+                //     top: 0
+                //     width: 250px
+                //     height: 100%
+                //     content: ""
+                //     z-index: 2
+                //     left: 0
+                //     background: linear-gradient(to top, white, rgba(255, 255, 255, .2))
+
+    .experience
+        margin-bottom: 15px
+
+        p
+            color: #676767
+            letter-spacing: 1px
+        
+        span
+
+    .job-action-buttons
+        display: flex
+        flex-direction: column
+
+        button
+            display: flex
+            align-items: center
+            padding: 10px 0
+            border-radius: 10px
+            outline: none
+            border: none
+            justify-content: center
+            cursor: pointer
+
+            &.easy-apply
+                background: #54efc3
+                margin-bottom: 15px
+                font-weight: 500
+
+                svg
+                    height: 15px
+                    margin-right: 5px
+
+            &.ask-for-referral
+                background: #4943da
+                color: white
+                font-weight: 300
+                
+
+        
+
+// .logos:before,
+// .logos:after 
+//   position: absolute
+//   top: 0
+//   width: 250px
+//   height: 100%
+//   content: ""
+//   z-index: 2
+
+// .logos:before 
+//   left: 0
+//   background: linear-gradient(to left, rgba(255, 255, 255, 0), #b8d2e6)
+
+// .logos:after
+//   right: 0
+//   background: linear-gradient(to right, rgba(255, 255, 255, 0), #b8d2e6)

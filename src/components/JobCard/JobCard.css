@@ -1,13 +1,18 @@
 .job-card {
-  height: 30px;
+  width: 400px;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 0px 6px 0px rgba(0, 0, 0, 0.1);
+  margin: 30px;
 }
 .job-card .post-date {
   display: flex;
   align-items: center;
   padding: 5px 10px;
   border: 1px solid var(--base-grey-color);
-  border-radius: 5px;
+  border-radius: 20px;
   width: fit-content;
+  margin-bottom: 15px;
 }
 .job-card .post-date img.hourglass-image {
   height: 12px;
@@ -15,6 +20,84 @@
 }
 .job-card .post-date p.post-time {
   font-size: 12px;
+}
+.job-card .company-details {
+  display: flex;
+  margin-bottom: 15px;
+}
+.job-card .company-details img.company-logo {
+  width: 100px;
+}
+.job-card .company-details .job-info p.company-name {
+  color: var(--text-grey-color);
+  letter-spacing: 1px;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+.job-card .company-details .job-info p.job-profile {
+  margin-bottom: 5px;
+}
+.job-card .company-details .job-info p.job-location {
+  font-size: 13px;
+  font-weight: 600;
+}
+.job-card p.salary {
+  color: #4c5969;
+  margin-bottom: 15px;
+}
+.job-card h3.about-company {
+  font-weight: 500;
+}
+.job-card .job-description {
+  position: relative;
+  height: 250px;
+  overflow: hidden;
+  margin-bottom: 15px;
+}
+.job-card .job-description a .view-job {
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  padding: 75px 0 20px;
+  background: linear-gradient(to top, white, rgba(255, 255, 255, 0.2));
+  width: 100%;
+  color: #4d47db;
+  cursor: pointer;
+}
+.job-card .experience {
+  margin-bottom: 15px;
+}
+.job-card .experience p {
+  color: #676767;
+  letter-spacing: 1px;
+}
+.job-card .job-action-buttons {
+  display: flex;
+  flex-direction: column;
+}
+.job-card .job-action-buttons button {
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+  border-radius: 10px;
+  outline: none;
+  border: none;
+  justify-content: center;
+  cursor: pointer;
+}
+.job-card .job-action-buttons button.easy-apply {
+  background: #54efc3;
+  margin-bottom: 15px;
+  font-weight: 500;
+}
+.job-card .job-action-buttons button.easy-apply svg {
+  height: 15px;
+  margin-right: 5px;
+}
+.job-card .job-action-buttons button.ask-for-referral {
+  background: #4943da;
+  color: white;
+  font-weight: 300;
 }
 
 /*# sourceMappingURL=JobCard.css.map */
