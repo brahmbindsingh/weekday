@@ -3,6 +3,9 @@ export const getJobProfile = (job: string) => {
         case 'backend':
         case 'frontend':
             return capitalizeString(job+" Engineer");
+
+        default: 
+        return capitalizeString(job);
     }
 }
 

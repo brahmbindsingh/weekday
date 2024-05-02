@@ -1,9 +1,8 @@
 .job-card {
-  width: 400px;
+  width: 350px;
   padding: 20px;
   border-radius: 20px;
   box-shadow: 0 0px 6px 0px rgba(0, 0, 0, 0.1);
-  margin: 30px;
 }
 .job-card .post-date {
   display: flex;
