@@ -1,14 +1,15 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import JobCard from "./components/JobCard/JobCard";
 import data from "./data.json";
 import { FilterType, IJobFilter } from "./constants/JobInterfaces";
 import JobFilter from "./components/JobFilter/JobFilter";
+import { enrichAllFilter } from "./enrichments/filter-value-enrichment";
 
 function App() {
 
-  const filterList: IJobFilter[] = [
+  const [filterList, setFilterList] = useState([
     {
       text: "Roles",
       type: FilterType.ROLES,
@@ -33,14 +34,20 @@ function App() {
       text: "Search Company Name",
       type: FilterType.SEARCH_COMPANY_NAME,
     }
-  ]
+  ]);
+
+  useEffect(() => {
+    const list = enrichAllFilter(filterList,  data.jdList);
+    setFilterList(list);
+  }, [])
+  
 
   return (
     <>
       <div className="filters">
         {
           filterList.map((el)=>{
-            return <JobFilter jobFilter={el} />
+            return <JobFilter key={el.type} jobFilter={el} />
           })
         }
       </div>
