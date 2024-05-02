@@ -1,3 +1,10 @@
+.filters{
+  display: flex;
+  align-items: center;
+  /* width: 100%; */
+  margin: auto;
+}
+
 .jobs{
   margin: 30px;
   display: grid;

@@ -4,7 +4,11 @@ import { IJobDetails } from "../../constants/JobInterfaces";
 import { capitalizeString, getJobProfile } from "../../utils/utils";
 import './JobCard.css';
 
-const JobCard = (props: IJobDetails) => {
+interface Props{
+  jobDetails: IJobDetails
+}
+
+const JobCard = (props: Props) => {
 
   return (
     <div className="job-card">
@@ -16,26 +20,26 @@ const JobCard = (props: IJobDetails) => {
         <img src="" alt="fampay" className="company-logo" />
         <div className="job-info">
           <p className="company-name">Fampay</p>
-          <p className="job-profile">{getJobProfile(props.jobRole)}</p>
-          <p className="job-location">{capitalizeString(props.location)}</p>
+          <p className="job-profile">{getJobProfile(props.jobDetails.jobRole)}</p>
+          <p className="job-location">{capitalizeString(props.jobDetails.location)}</p>
         </div>
       </div>
         {
-          props.minJdSalary !== null ?
-            <p className="salary">Estimated Salary: <span>{props.minJdSalary}</span> - <span>{props.maxJdSalary}</span> LPA</p> :
-            <p className="salary">Estimated Salary: <span>{props.maxJdSalary}</span> LPA</p>
+          props.jobDetails.minJdSalary !== null ?
+            <p className="salary">Estimated Salary: <span>{props.jobDetails.minJdSalary}</span> - <span>{props.jobDetails.maxJdSalary}</span> LPA</p> :
+            <p className="salary">Estimated Salary: <span>{props.jobDetails.maxJdSalary}</span> LPA</p>
         }
       <h3 className="about-company">About Company:</h3>
       <h4 className="about-us">About Us</h4>
       <div className="job-description">
-        <p>{props.jobDetailsFromCompany}</p>
-        <a href={props.jdLink}>
+        <p>{props.jobDetails.jobDetailsFromCompany}</p>
+        <a href={props.jobDetails.jdLink}>
           <div className="view-job">View Job</div>
         </a>
       </div>
       <div className="experience">
         <p>Minimum Experience</p>
-        <span>{props.minExp} years</span>
+        <span>{props.jobDetails.minExp} years</span>
       </div>
       <div className="job-action-buttons">
         <button className="easy-apply">
