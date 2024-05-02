@@ -1,8 +1,20 @@
 .job-card {
   height: 30px;
 }
+.job-card .post-date {
+  display: flex;
+  align-items: center;
+  padding: 5px 10px;
+  border: 1px solid var(--base-grey-color);
+  border-radius: 5px;
+  width: fit-content;
+}
 .job-card .post-date img.hourglass-image {
-  height: 30px;
+  height: 12px;
+  margin-right: 5px;
+}
+.job-card .post-date p.post-time {
+  font-size: 12px;
 }
 
-/*# sourceMappingURL=JobCard.module.css.map */
+/*# sourceMappingURL=JobCard.css.map */
