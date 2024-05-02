@@ -5,19 +5,12 @@ import {
   UPDATE_JOBS_REQUEST,
   UPDATE_JOBS_SUCCESS,
 } from "../constants/JobConstants";
-import { IJobDetails } from "../constants/JobInterfaces";
+import { IJobDetails, JobInitialState } from "../constants/JobInterfaces";
 
-export interface InitialState {
-  loading: boolean,
-  jobList: IJobDetails[],
-  totalResults: number,
-  offset: number
-}
-
-export const jobReducer = (
-  state: InitialState = { loading: true, jobList: [], totalResults: 0, offset: 0 },
+export const jobReducer: (state: JobInitialState, action: any) => JobInitialState = (
+  state: JobInitialState = { loading: true, jobList: [], totalResults: 0, offset: 0 },
   action: any
-) => {
+): JobInitialState => {
   switch (action.type) {
     case GET_ALL_JOBS_REQUEST:
       return {

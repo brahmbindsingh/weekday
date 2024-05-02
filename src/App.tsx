@@ -3,7 +3,7 @@ import logo from "./logo.svg";
 import "./App.css";
 import JobCard from "./components/JobCard/JobCard";
 import data from "./data.json";
-import { FilterType, IJobDetails, IJobFilter } from "./constants/JobInterfaces";
+import { FilterType, IJobDetails, IJobFilter, JobInitialState } from "./constants/JobInterfaces";
 import JobFilter from "./components/JobFilter/JobFilter";
 import { enrichAllFilter } from "./enrichments/filter-value-enrichment";
 import { JobActions } from "./actions/job-actions";
@@ -14,9 +14,7 @@ function App() {
   const jobActions: JobActions = new JobActions();
   const dispatch: any = useDispatch();
 
-  const { loading, jobList, totalResults, offset } = useSelector(
-    (state: any) => state.jobs
-  );
+  const { loading, jobList, totalResults, offset } = useSelector((state: any) => state.jobs);
 
   const [filterList, setFilterList] = useState<IJobFilter[]>([
     {

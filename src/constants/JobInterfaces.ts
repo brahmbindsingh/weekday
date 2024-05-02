@@ -35,3 +35,18 @@ export enum FilterType {
   MINIMUM_SALARY = "MINIMUM_SALARY",
   SEARCH_COMPANY_NAME = "SEARCH_COMPANY_NAME",
 }
+
+export interface JobInitialState {
+  loading: boolean,
+  jobList: IJobDetails[],
+  totalResults: number,
+  offset: number
+}
+
+export interface IJobAction{
+  payload: {
+    jobs?: IJobDetails[],
+    count?: number
+  },
+  type: string
+}
