@@ -1,19 +1,55 @@
-.filter
-    padding: 10px
-    border: 1px solid #676767
+.filter-container
+    position: relative
+    padding: 8px 10px
+    border: 1px solid var(--text-grey-color)
     border-radius: 5px
-    display: flex
-    align-items: center
-    width: fit-content
     margin: 0 5px
 
-    select
+    input
         outline: none
         border: none
-        appearance: none
-        border-right: 1px solid #676767
-        color: #676767
 
-    svg
-        height: 15px
-        margin-left: 10px
+    .filter
+        display: flex
+        align-items: center
+
+        p
+            padding-right: 10px
+            border-right: 1px solid var(--text-grey-color)
+            margin-right: 10px
+            font-size: 12px
+            color: var(--text-grey-color)
+            width: 100%
+
+        img
+            height: 7px
+            opacity: .4
+
+    .dropdown
+        position: absolute
+        top: 35px
+        background: white
+        left: -1px
+        border: 1px solid var(--text-grey-color)
+        border-top: none
+        border-bottom-left-radius:  5px
+        border-bottom-right-radius:  5px
+
+        div
+            padding: 5px 0px
+            margin: 0 10px
+            font-size: 14px
+            border-bottom: 1px solid var(--text-grey-color)
+            cursor: pointer
+
+
+.company-container
+    position: relative
+    padding: 5px 10px
+    border: 1px solid var(--text-grey-color)
+    border-radius: 5px
+    margin: 0 5px
+
+    input
+        outline: none
+        border: none

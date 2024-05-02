@@ -1,8 +1,8 @@
 .filters{
   display: flex;
   align-items: center;
-  /* width: 100%; */
-  margin: auto;
+  justify-content: center;
+  margin-top: 20px;
 }
 
 .jobs{

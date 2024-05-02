@@ -12,8 +12,9 @@ export interface IJobDetails {
 }
 
 export interface IJobFilter {
-  text: string;
-  type: TFilters;
+  text: string,
+  type: TFilters,
+  width: number,
   values?: any[]
 }
 
