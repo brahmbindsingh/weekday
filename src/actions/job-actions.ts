@@ -1,8 +1,10 @@
-import { GET_ALL_JOBS_FAILIURE, GET_ALL_JOBS_REQUEST, GET_ALL_JOBS_SUCCESS } from "../constants/JobConstants";
+import { GET_ALL_JOBS_FAILIURE, GET_ALL_JOBS_REQUEST, GET_ALL_JOBS_SUCCESS, UPDATE_JOBS_SUCCESS } from "../constants/JobConstants";
 
 export class JobActions {
   fetchJobs = (limit: number, offset: number) => async (dispatch: any) => {
-    dispatch({ type: GET_ALL_JOBS_REQUEST })
+    if(offset === 0){
+      dispatch({ type: GET_ALL_JOBS_REQUEST })
+    }
     const myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
 
@@ -25,13 +27,19 @@ export class JobActions {
         const resultString: string = await response.text();
         const json = JSON.parse(resultString);
         console.log(json);
-        
-        dispatch({ type: GET_ALL_JOBS_SUCCESS, payload: json.jdList })
+        if(offset === 0){
+          dispatch({ type: GET_ALL_JOBS_SUCCESS, payload: {jobs: json.jdList, count: json.totalCount} })
+        }
+        else{
+          dispatch({ type: UPDATE_JOBS_SUCCESS, payload: {jobs: json.jdList} })
+        }
         
     }
     catch(error){
         console.log(error);
-        dispatch({ type: GET_ALL_JOBS_FAILIURE, payload: "ERROR" })
+        if(offset === 0){
+          dispatch({ type: GET_ALL_JOBS_FAILIURE, payload: "ERROR" })
+        }
     }
 
   };

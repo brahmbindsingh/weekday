@@ -42,6 +42,9 @@
   border-bottom: 1px solid var(--text-grey-color);
   cursor: pointer;
 }
+.filter-container .dropdown div:last-child {
+  border: none;
+}
 
 .company-container {
   position: relative;

@@ -19,7 +19,7 @@ const JobCard = (props: Props) => {
       <div className="company-details">
         <img src="" alt="fampay" className="company-logo" />
         <div className="job-info">
-          <p className="company-name">Fampay</p>
+          <p className="company-name">{props.jobDetails.jdUid}</p>
           <p className="job-profile">{getJobProfile(props.jobDetails.jobRole)}</p>
           <p className="job-location">{capitalizeString(props.jobDetails.location)}</p>
         </div>
